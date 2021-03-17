@@ -65,7 +65,7 @@ impl ScriptAddress {
 /// Serialized script, used inside transaction inputs and outputs.
 #[derive(PartialEq, Debug)]
 pub struct Script {
-	data: Bytes,
+	pub data: Bytes,
 }
 
 impl From<&'static str> for Script {
