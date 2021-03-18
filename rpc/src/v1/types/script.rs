@@ -74,6 +74,7 @@ impl<'a> Deserialize<'a> for ScriptType {
 			fn visit_str<E>(self, value: &str) -> Result<ScriptType, E> where E: ::serde::de::Error {
 				match value {
 					"nonstandard" => Ok(ScriptType::NonStandard),
+					"cryptocondition" => Ok(ScriptType::NonStandard),
 					"pubkey" => Ok(ScriptType::PubKey),
 					"pubkeyhash" => Ok(ScriptType::PubKeyHash),
 					"scripthash" => Ok(ScriptType::ScriptHash),
