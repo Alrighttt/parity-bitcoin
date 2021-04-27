@@ -198,6 +198,12 @@ impl From<&'static str> for Transaction {
 	}
 }
 
+impl From<String> for Transaction {
+	fn from(s: String) -> Self {
+		deserialize(s.as_bytes() as &[u8]).unwrap()
+	}
+}
+
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum TxHashAlgo {
     DSHA256,
